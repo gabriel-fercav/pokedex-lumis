@@ -32,7 +32,9 @@ const PokeCard = ({ isLoading, pokemon }) => {
 
   const capitalize = (str) => str?.charAt(0).toUpperCase() + str?.slice(1)
 
-  if (isLoading || !pokemon) <Skeleton className="pokecard-size rounded-lg" />
+  if (isLoading || !pokemon) {
+    return <Skeleton className="pokecard-size rounded-lg" />
+  }
 
   return (
     <div
@@ -43,7 +45,12 @@ const PokeCard = ({ isLoading, pokemon }) => {
         <p className={`text-md ${typeColor}`}>{capitalize(pokemon?.types[0])}</p>
         <p className="text-md">#{pokemon?.number}</p>
       </div>
-      <img className="w-full h-auto" src={pokemon?.image} alt={capitalize(pokemon?.name)} />
+      {!pokemon?.img ? (
+        <img className="w-full h-auto" src={pokemon?.image} alt={capitalize(pokemon?.name)} />
+      ) : (
+        <Skeleton className="w-full h-24" />
+      )}
+
       <div className="text-center mt-2">
         <p>{capitalize(pokemon?.name)}</p>
       </div>
