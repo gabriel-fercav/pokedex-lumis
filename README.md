@@ -25,6 +25,8 @@ Responsável pelo roteamento entre páginas (por exemplo, a lista de pokémons e
 
 ## Deploy (Vercel)
 
+https://pokedex-lumis-flame.vercel.app/
+
 ## Rodando o Projeto Localmente
 
 Para rodar o projeto, siga a lista de comandos abaixo após realizar sua clonagem
